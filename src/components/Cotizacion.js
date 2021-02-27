@@ -8,12 +8,14 @@ const ResultadoDiv = styled.div`
 
 const Info = styled.p`
     font-size: 18px;
+    margin-bottom: 0.25rem;
     span {
         font-weight:bold;
     }
 `;
 const Precio = styled.p`
     font-size: 30px;
+    margin-bottom: 0.75rem;
 
     span {
         font-weight:bold;
