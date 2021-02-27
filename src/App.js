@@ -13,8 +13,35 @@ const Contenedor = styled.div`
   background-color: #290149;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 8vh;
   color: white;
+`;
+
+const Foot = styled.div`
+  margin: 0;
+  min-width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  background-color: #290149;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  color: white;
+  position: fixed;
+  flex-direction: column;
+  bottom: 0;
+
+  font-size: 1rem;
+  font-family: 'Bebas Neue', cursive;
+   font-weight: lighter;
+
+  &::after {
+  content: "";
+  width: 100px;
+  height: 0.25rem;
+  background-color: #6670e3;
+  display: block;
+}
 `;
 
 const ContenedorMain = styled.main`
@@ -68,25 +95,18 @@ function App() {
 
   useEffect( () => {
     const cotizarCriptomoneda = async () => {
-        // evitamos la ejecución la primera vez
         if(moneda === '') return;
-        // consultar la api para obtener la cotizacion
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
         const resultado = await axios.get(url);
-        // mostrar el spinner
         guardarCargando(true);
-        // ocultar el spinner y mostrar el resultado
         setTimeout(() => {
-          // cambiar el estado de cargando
           guardarCargando(false);
-          // guardar cotizacion
           guardarResultado(resultado.data.DISPLAY[criptomoneda][moneda] );
         }, 3000);
       }
     cotizarCriptomoneda();
 }, [moneda, criptomoneda]);
 
- // Mostrar spinner o resultado
  const componente = (cargando) ? <Spinner /> :  <Cotizacion  resultado={resultado} />
 
   return (
@@ -111,6 +131,9 @@ function App() {
           {componente}
         </MainBox>
       </ContenedorMain>
+      <Foot> 
+      <p>My Crypto App <small>&copy; Copyright 2021, sCerdan</small></p>
+    </Foot>
     </>
   );
 }
