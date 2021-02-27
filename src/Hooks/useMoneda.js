@@ -10,7 +10,7 @@ const Label = styled.label`
     display: block;
     text-align: center;
     letter-spacing: 1px;
-    margin-bottom: 2rem;
+    /* margin-bottom: 1rem; */
 `;
 
 const Select = styled.select`
@@ -18,10 +18,10 @@ const Select = styled.select`
     display:block;
     padding: 0.75rem;
     -webkit-appearance: none;
-    border-radius: 10px;
+    border-radius: 0.75rem;
     border: none;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 `
 
 const useMoneda = (label, stateInicial, opciones) => {
