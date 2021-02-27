@@ -31,3 +31,8 @@ body {
 p.precio{
   font-size: 30px!important;
 }
+
+img {
+  width: fit-content;
+  height: fit-content;
+}
