@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import imagen from './cryptomonedas.png';
+import Formulario from './components/Formulario'
 
 const Contenedor = styled.div`
   margin: 0;
@@ -8,7 +10,7 @@ const Contenedor = styled.div`
   background-color: #290149;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: 10vh;
   color: white;
 `;
 
@@ -18,7 +20,7 @@ const ContenedorMain = styled.main`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 75vh;
+  height: 80vh;
   color: white;
 `;
 
@@ -30,15 +32,41 @@ const MainBox = styled.div`
   color: white;
 `;
 
+const Imagen = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+const Heading = styled.h1`
+font-size: 2rem;
+font-family: 'Bebas Neue', cursive;
+letter-spacing: 0.25rem;
+font-weight: 300;
+
+&::after {
+  content: "";
+  width: 100px;
+  height: 7px;
+  background-color: #6670e3;
+  display: block;
+}
+`;
+
 function App() {
   return (
     <>
     <Contenedor> 
-      <h1>Cripto App</h1>
+      <Heading>My Cripto App</Heading>
     </Contenedor>
     <ContenedorMain>
-        <MainBox>1</MainBox>
-        <MainBox>2</MainBox>
+        <MainBox>
+          <Imagen 
+          src={imagen}
+          alt="Imagen primer box"/>
+        </MainBox>
+        <MainBox>
+          <Formulario/>
+        </MainBox>
         <MainBox>3</MainBox>
       </ContenedorMain>
     </>
