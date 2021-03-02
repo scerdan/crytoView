@@ -56,10 +56,10 @@ const ContenedorMain = styled.main`
 `;
 
 const MainBox = styled.div`
-  width: 35rem;
+  width: 25rem;
   display: flex;
   background-color: #290149;
-  height: 35rem;
+  height: 25rem;
   color: white;
   flex-direction: column;
   justify-content: center;
